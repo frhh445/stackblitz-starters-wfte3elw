@@ -1,0 +1,156 @@
+:root {
+  --bg: #0b1020;
+  --panel: #151d35;
+  --card: #1a2544;
+  --text: #e7ecff;
+  --muted: #94a3c6;
+  --accent: #4f8cff;
+  --danger: #ff5d79;
+  --border: #2c3c68;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top right, #1f2a52, var(--bg));
+  color: var(--text);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  padding: 24px;
+  border-right: 1px solid var(--border);
+  background-color: rgba(10, 14, 28, 0.65);
+}
+
+.sidebar h1 {
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+nav {
+  display: grid;
+  gap: 10px;
+}
+
+button,
+input {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  background: #111a31;
+  color: var(--text);
+}
+
+nav button.active,
+button:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.content {
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.server-config {
+  display: flex;
+  gap: 8px;
+}
+
+#api-base {
+  min-width: 260px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 9px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.danger {
+  border-color: var(--danger);
+}
+
+.pill {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  background-color: #111a31;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 1050px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grid.two,
+  .grid.three,
+  header,
+  .server-config {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+}
