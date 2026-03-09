@@ -1,8 +1,10 @@
 {
+  "name": "virtual-sms-saas-root",
+  "private": true,
   "scripts": {
-    "start": "servor --reload"
-  },
-  "dependencies": {
-    "servor": "^4.0.2"
+    "start": "npm --prefix site run start",
+    "dev": "npm --prefix site run dev",
+    "frontend": "npm --prefix site run frontend --",
+    "lint": "npm --prefix site run lint"
   }
 }
